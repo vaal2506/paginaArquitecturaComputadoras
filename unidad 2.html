@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Aguilar Lopez" />
+    <title>Unidad 2</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+<!-- imagen del tec -->
+    <div style="width:50%"> <img src = "imagenes/imagenTec.png" style="height:170px; width:150px; float: left; padding:0; margin:0"> </div>
+	
+    <a name="Inicio">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 id="title3" style="color: #0f52ba;;">Estructura y funcionamiento de la unidad central de procesamiento</h1>
+       
+        <div class="div-inicio">
+
+            <a href="index.html" target="_self"> Volver a inicio</a>
+        </div>
+        
+        <br><br><br><br><br><br>
+        
+        <div class="div-unidades1">
+            <h4 style="font-family: Arial, Helvetica, sans-serif; color: black; font-size: 30px; text-align: center;">
+                Temas
+            </h4>
+            <li>
+                <a href="#2.1" target="_self" id="title4"> 2.1 Organización del procesador </a>
+            </li><br />
+            <li>
+                <a href="#2.2" target="_self" id="title4"> 2.2 Estructuras de registros </a>
+            </li><br />
+            <li>
+                <a href="#2.2.1" target="_self" id="title4"> 2.2.1 Registros visibles para el usuario</a>
+            </li><br />
+            <li>
+                <a href="#2.2.2" target="_self" id="title4"> 2.2.2 Registros de control y de estados</a>
+            </li><br />
+            <li>
+                <a href="#2.2.3" target="_self" id="title4"> 2.2.3 Ejemplos de registros de CPU reales</a>
+            </li><br />
+            <li>
+                <a href="#2.3" target="_self" id="title4"> 2.3 El ciclo de intrucción</a>
+            </li><br />
+            <li>
+                <a href="#2.3.1" target="_self" id="title4"> 2.3.1 Ciclo Fetch-Decode-Execute</a>
+            </li><br />
+            <li>
+                <a href="#2.3.2" target="_self" id="title4"> 2.3.2 Segmentación de instrucciones</a>
+            </li><br />
+            <li>
+                <a href="#2.3.3" target="_self" id="title4"> 2.3.3 Conjunto de instrucciones. Características y funciones</a>
+            </li><br />
+            <li>
+                <a href="#2.3.4" target="_self" id="title4"> 2.3.4 Modos de direccionamiento</a>
+            </li><br />
+            <li>
+                <a href="#2.4" target="_self" id="title4"> 2.4 Casos de estudio de CPU reales</a>
+            </li><br/>
+        </div>
+    </a>
+    
+    <a name="2.1">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color: #007fff; text-align: center;">
+            2.1 Organización del procesador
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            La Unidad de Procesamiento (CPU) controla el funcionamiento del computador y lleva a cabo sus funciones de procesamiento de datos. Frecuentemente se le llama procesador.
+            
+            Un procesador, incluye tanto registros visibles por el usuario como registros de control/estado. Los registros visibles por el usuario pueden ser de uso general o tener una utilidad especial, mientras que los registros de control y estado se usan para controlar el funcionamiento del procesador, un claro ejemplo es el contador de programa.
+            
+            Lleva a cabo una gran variedad de:
+            
+            •     Cálculos
+            
+            •     Comparaciones numéricas
+            
+            •     Transferencias de datos como respuesta a las peticiones de los programas que están siendo ejecutados en memoria.
+            
+            La CPU controla las operaciones básicas del ordenador enviando y recibiendo señales de control, direcciones de memoria y datos de un lugar a otro de la computadora a través de un grupo de canales llamados BUS.
+            
+            La Unidad Central de Proceso está constituida internamente por:
+            
+            •     La Unidad de Control
+            
+            •     Unidad Aritmético-Lógica
+             
+            <br>
+            <br>
+        </p>
+            
+        <h4 style="font-family: Arial; font-size:25px; text-align: center;">  
+            <b> Unidad Aritmético-Lógica (ALU)) </b>
+        </h4>
+        
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            Recibe los datos sobre los que efectúa operaciones de cálculo y comparaciones. Toma decisiones lógicas (determina si una afirmación es correcta o falsa mediante reglas del algebra de Boole) y devuelve luego el resultado. Todo ello bajo supervisión de la unidad de control.
+            <br>
+            <br>
+        </p>
+        
+        <h4 style="font-family: Arial; font-size:25px; text-align: center;">  
+            <b> La Unidad de Control </b>
+        </h4>
+            
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            La unidad de control le indica al resto del sistema como llevar a cabo las instrucciones de un programa. Comanda las señales electrónicas entre la memoria y la unidad aritmético-lógica, y entre el CPU y los dispositivos de entrada y salida. Para ejecutar cualquier programa, cada comando del mismo se desglosa en instrucciones.
+            <br>
+            <br>
+            Los procesadores utilizan la segmentación de instrucciones para acelerar la ejecución. La segmentación de cauce se puede dividir en ciclo de instrucción en varias etapas separadas que operan secuencialmente, tales como la captación de instrucción, decodificación de instrucción, cálculo de direcciones de operando, ejecución de instrucción y estructura del operando resultado.
+            <br>
+            <br>
+            A continuación se muestra cómo se organiza un procesador, para esto se tiene que considerar los siguientes requisitos:
+            <br>
+            <br>
+            Captar instrucciones: el procesador lee una instrucción de memoria (registro, cache o memoria principal).
+            <br>
+            <br>
+            Interpretar instrucción: la instrucción se codifica para determinar qué acción es necesario.
+            <br>
+            <br>
+            Captar datos: la ejecución de una instrucción puede exigir leer datos de memoria o de un módulo de E/S.
+            <br>
+            <br>
+            Procesar datos: la ejecución de una instrucción puede exigir llevar a cabo alguna operación aritmética o lógica con los datos.
+            <br>
+            <br>
+            Escribir datos: los resultados de una ejecución pueden exigir escribir datos en la memoria o en el módulo de E/S.
+            <br>
+            <br>
+            Para hacer estas cosas, el procesador necesita almacenar instrucciones y datos temporalmente mientras una instrucción está ejecutándose, en otras palabras el procesador necesita una pequeña memoria interna, también llamados registros.
+            <br>
+            <br>
+            
+            <img src="imagenes2/1.png"
+            width="300"
+            height="300"
+            align="center">
+            
+            <br>
+            <br>
+            
+            En esta figura se muestra una visión simplificada de un procesador, que indica su conexión con el resto de sistema, a través del bus del sistema. La ALU lleva a cabo el verdadero cálculo o procesamiento de datos. La unidad de control controla la transferencia de datos e instrucciones así a dentro y así afuera del procesador, y el funcionamiento de la ALU. Además la figura muestra una memoria interna mínima, que consta de un conjunto de posiciones de almacenamiento llamadas registros.
+            
+            <br>
+            <br>
+            
+            <img src="imagenes2/2.jpg"
+            width="300"
+            height="300"
+            align="center">
+            
+            <br>
+            <br>
+            
+            En esta figura se indican los caminos de transferencia de datos y de la lógica de control, que incluye un elemento con el rotulo bus interno del procesador. También se muestran los elementos básicos típicos de la ALU. Hay que observar la similitud entre la estructura interna del computador en su totalidad y la estructura interna del procesador. En ambos casos hay una pequeña colección de elementos principales (computador: procesador, E/S, memoria; procesador: unidad de control, ALU, registros) conectados por caminos de datos.
+            
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.2">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color: #007fff; text-align: center;">
+            2.2 Estructuras de registros
+        </h1>
+        
+        <h4 style="font-family: Arial; font-size:25px; text-align: center;">  
+            <b> ¿Qué son los registros del CPU? </b>
+        </h4>
+        
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">    
+            Se emplean para controlar las instrucciones en ejecución, manejar direccionamiento de memoria y propiciar la capacidad aritmética.
+            Los registros vienen de tres tipos: datos, direcciones e índice, que tiene lugar en casi todos los aspectos de la operación del CPU. El tamaño de un registro depende del CPU; los más simples tienen registros que aceptan 8 o 16 bits de datos y los más complejos tienen registros de 32, 48 o 64 bits.
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.2.1">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color:#007fff; text-align: center;">
+            2.2.1 Registros visibles para el usuario
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            Son aquellos que pueden ser referenciado por medio del lenguaje maquina que ejecuta la CPU, los registro que normalmente disponibles son:
+            <br>
+            <br>
+            Registros de propósito general, son aquellos que pueden guardar tanto datos como direcciones
+            <br>
+            <br>
+            Registro de datos, que pueden ser asignados por el programador a diversas funciones. En algunos casos son de propósito general y pueden ser empleados por cualquier instrucción de máquina que lleve a cabo operaciones sobre los datos.
+            <br>
+            <br>
+            Registros de direcciones, contienen direcciones en la memoria principal de datos y este tipo de registro puede ser de propósito general o estar a un modo específico de direccionamiento.
+            <br>
+            <br>
+            Códigos de condición, también conocidos como indicadores o flags. Los códigos de  condición, son bits activados por el procesador como resultado de determinadas operaciones
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.2.2">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px;color: #007fff; text-align: center;">
+            2.2.2 Registros de control y de estados
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            Se utilizan para controlar las operaciones del procesador, la mayor parte de estos registros no son visibles al usuario y algunos pueden ser accesibles a las instrucciones de maquina ejecutadas en un modo de control. Los registros utilizados son los siguientes:
+            <br>
+            <br>
+            Registro de direcciones de memoria (MAR), el cual contiene la dirección en donde se efectuará la próxima lectura o escritura de datos. El numero de direcciones depende del tamaño de la MAR.
+            <br>
+            <br>
+            Registro de datos de memoria (MBR), contiene los datos que van a ser escritos en la memoria o los que fueron leídos en ella.
+            <br>
+            <br>
+            Registro de direcciones de entrada y salida (I/O AR), especifica al dispositivo ya sea de entrada o salida
+            <br>
+            <br>
+            Registro de datos de entrada y salida (I/O BR), es una área temporal en donde se lleva a cabo el intercambio de datos entre el procesador y el dispositivo de entrada y salida que esta especificado en IOAR.
+            <br>
+            <br>
+            Registro de instrucciones (IR), contiene la dirección de la siguiente instrucción que se va a ejecutar. 
+            <br>
+            <br>
+            Palabras de estado del programa (PSW), contiene códigos de condición junto con otras informaciones de estado como el signo, acarro, desbordamiento, entre otras.
+            <br>
+            <br>
+            
+            
+            
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.2.3">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color: #007fff; text-align: center;">
+            2.2.3 Ejemplos de registros de CPU reales
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            En algún diseño concreto de procesador es posible encontrar otros registros relativos a estado y control. Puede existir un puntero a un bloque de memoria que contenga información de estado adicional (por ejemplo, bloques de control de procesos). En las máquinas que usan interrupciones vectorizadas puede existir un registro de vector de interrupción. Si se utiliza una pila para llevar a cabo ciertas funciones (por ejemplo, llamada a subrutina), se necesita un puntero de pila del sistema. En un sistema de memoria virtual se usa un puntero a la tabla de páginas. Por último, pueden emplearse registros para el control de operaciones de E/S. En el diseño de la organización de los registros de control y estado entran en juego varios factores. Una cuestión primordial es el soporte del sistema operativo. Algunos tipos de información de control son de utilidad específica para el sistema operativo. Si el diseñador del procesador posee una comprensión funcional del sistema operativo que se va a utilizar, la organización de los registros puede adaptarse hasta cierto punto a ese sistema operativo. Otra decisión importante en el diseño es la distribución de información de control entre registros y memoria. Es frecuente dedicar los primeros (más bajos) pocos cientos o miles de palabras de memoria para fines de control. El diseñador debe decidir cuánta información de control debiera estar en registros y cuánta en memoria. Se presenta el compromiso habitual entre coste y velocidad.
+            <br>
+            <br>
+            
+            <img src="imagenes2/4.jpg"
+            width="700"
+            height="500"
+            align="center">
+            
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.3">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px;color: #007fff; text-align: center;">
+            2.3 El ciclo de instrucción
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            Un ciclo de instrucción incluye los siguientes subciclos:
+            <br>
+            <br>
+            Captación: llevar la siguiente instrucción de la memoria al procesador.
+            <br>
+            <br>
+            Ejecución: interpretar el código de operación y llevar a cabo la operación indicada.
+            <br>
+            <br>
+            Interrupción: si las interrupciones están habilitadas y ha ocurrido una interrupción, guardar el estado del proceso actual y atender la interrupción.
+            <br>
+            <br>
+        </p>
+        
+        <h4 style="font-family: Arial; font-size:25px; text-align: center;">  
+            <b> El Ciclo Indirecto </b>
+        </h4>
+        
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            La ejecución de una instrucción puede involucrar a uno o más operandos en memoria, cada uno de los cuales requiere un acceso a memoria. Además, si se usa direccionamiento indirecto serán necesarios accesos a memoria adicionales.
+            <br>
+            Podemos considerar la captación de direcciones indirectas como un subciclo de instrucción más. La principal línea de actividad consiste en alternar las  actividades de captación y ejecución de instrucciones. Después de que una instrucción sea captada, es examinada para determinar si incluye algún direccionamiento indirecto. Si es así, los operandos requeridos se captan usando direccionamiento indirecto. Tras la ejecución se puede procesar una interrupción antes de la captación de la siguiente instrucción.
+            <br>
+            <br>
+            
+          
+            
+            <br>
+            <br>
+            Aquí se muestra otra forma de ver este proceso. Esta nueva figura ilustra más correctamente la naturaleza del ciclo de instrucción. Una vez que una instrucción es captada, deben identificarse sus campos de operandos. Se capta entonces de la memoria cada operando de entrada, y este proceso puede requerir direccionamiento indirecto. Los operandos ubicados en registros no necesitan ser captados. Una vez que se ejecuta la operación, puede ser necesario un proceso similar para almacenar el resultado en la memoria principal.
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.3.1">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color: #007fff; text-align: center;">
+            2.3.1 Ciclo Fetch-Decode-Execute
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            Procedimiento bien establecido
+            <br>
+            <br>
+            Fases(o sub ciclos): búsqueda  y ejecución (cada fase tiene etapas o actividades)
+            <br>
+            <br>
+            FASE FETCH
+            <br>
+            -Cargar la siguiente instrucción
+            <br>
+            -Incrementar el secuenciador
+            <br>
+            -Interpretar la Instrucción
+            <br>
+            <br>
+            FASE EXECUTE
+            <br>
+            -Cargar los operandos
+            <br>
+            -Ejecutar la operación
+            <br>
+            -Guardar el resultado
+            <br>
+            -Verificar si hay solicitudes de interrupción
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.3.2">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px;color: #007fff; text-align: center;">
+            2.3.2 Segmentación de instrucciones
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            La segmentación de las instrucciones (pipeline) consiste en dividir el ciclo de ejecución de las instrucciones en un conjunto de etapas. Estas etapas pueden coincidir o no con las fases del ciclo de ejecución de las instrucciones.
+            <br>
+            <br>
+            El objetivo de la segmentación es ejecutar simultáneamente diferentes etapas de distintas instrucciones, lo cual permite aumentar el rendimiento del procesador sin tener que hacer más rápidas todas las unidades del procesador (ALU, UC, buses, etc.) y sin tener que duplicarlas.
+            <br>
+            <br>
+            La división de la ejecución de una instrucción en diferentes etapas se debe realizar de tal manera que cada etapa tenga la misma duración, generalmente un ciclo de reloj. Es necesario añadir registros para almacenar los resultados intermedios entre las diferentes etapas, de modo que la información generada en una etapa esté disponible para la etapa siguiente.
+            <br>
+            <br>
+            Si consideramos que el producto es una instrucción y las etapas son cada una de las fases de ejecución de la instrucción, que llamamos etapa de segmentación, hemos identificado los elementos y el funcionamiento de la segmentación.
+            <br>
+            <br>
+            Veámoslo gráficamente. Presentamos un mismo proceso con instrucciones de tres etapas, en el que cada etapa tarda el mismo tiempo en ejecutarse, resuelto sin segmentación y con segmentación:
+            
+
+            <br>
+            <br>
+            
+            <img src="imagenes2/6.gif"
+            width="800"
+            height="200"
+            align="center">
+            
+            <br>
+            <br>
+            
+            Son necesarias nueve etapas para ejecutar las tres instrucciones.
+            
+            <br>
+            <br>
+            
+            <img src="imagenes2/7.gif"
+            width="800"
+            height="200"
+            align="center">
+            
+            <br>
+            <br>
+            
+            Son necesarias cinco etapas para ejecutar las tres instrucciones.
+            <br>
+            <br>
+            Se ha reducido el tiempo total que se tarda en ejecutar las tres instrucciones, pero no el tiempo que se tarda en ejecutar cada una de las instrucciones.
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.3.3">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color: #007fff; text-align: center;">
+            2.3.3 Conjunto de instrucciones. Características y funciones
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            Un conjunto de instrucciones o repertorio de instrucciones, juego de instrucciones o ISA (del inglés Instruction Set Architecture, Arquitectura del Conjunto de Instrucciones) es una especificación que detalla las instrucciones que una CPU de un ordenador puede entender y ejecutar, o el conjunto de todos los comandos implementados por un diseño particular de una CPU. El término describe los aspectos del procesador generalmente visibles a un programador, incluyendo los tipos de datos nativos, las instrucciones, los registros, la arquitectura de memoria y las interrupciones, entre otros aspectos.
+            <br>
+            <br>
+            Existen principalmente de 3 tipos: CISC (Complex Instruction Set Computer), RISC (Reduced Instruction Set Computer) y SISC (Simple Instruction Set Computing).
+            <br>
+            <br>
+            La arquitectura del conjunto de instrucciones (ISA) se emplea a veces para distinguir este conjunto de características de la microarquitectura, que son los elementos y técnicas que se emplean para implementar el conjunto de instrucciones. Entre estos elementos se encuentran las microinstrucciones y los sistemas de caché.
+            <br>
+            <br>
+            Procesadores con diferentes diseños internos pueden compartir un conjunto de instrucciones; por ejemplo, el Intel Pentium y AMD Athlon implementan versiones casi idénticas del conjunto de instrucciones x86, aunque tienen diseños diferentes.
+            <br>
+            <br>
+            Características que debe tener un conjunto de instrucciones:
+            <br>
+            <br>
+            Las características que se pretende que tenga un conjunto de instrucciones son cuatro, principalmente:
+            <br>
+            -Completo: Que se pueda realizar en un tiempo finito cualquier tarea ejecutable con un ordenador (computable o decidible).
+            <br>
+            -Eficiente: Que permita alta velocidad de cálculo sin exigir una elevada complejidad en su UC y ALU y sin consumir excesivos recursos (memoria), es decir, debe cumplir su tarea en un tiempo razonable minimizando el uso de los recursos.
+            <br>
+            -Autocontenidas: Esto es, que contengan en sí mismas toda la información necesaria para ejecutarse.
+            <br>
+            -Independientes: Que no dependan de la ejecución de alguna otra instrucción.
+            <br>
+            <br>
+            Se puede comprobar que para que un conjunto de instrucciones sea completo solo se necesitan cuatro instrucciones:
+            <br>
+            -Escritura
+            <br>
+            -Mover a la izquierda una posición y leer
+            <br>
+            -Mover a la derecha una posición y leer
+            <br>
+            -Parar
+            <br>
+            <br>
+            En esta idea se basan las arquitecturas RISC, no obstante, con este conjunto no se puede conseguir la eficiencia del repertorio de instrucciones por lo que en la práctica el conjunto suele ser más amplio en aras de conseguir un mejor rendimiento, tanto en uso de recursos como en consumo de tiempo.
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.3.4">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; color: #007fff); text-align: center;">
+            2.3.4 Modos de direccionamiento
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            Contar con diferentes formatos de instrucciones, implica contar con diferentes formas de obtener los operandos de las instrucciones. Por lo general a estas múltiples formas se les conoce como modos de direccionamiento. Los modos de direccionamiento en MIPS son:
+
+            Direccionamiento por registro, donde los operandos son registros. Los datos a operar están contenidos en 2 registros de 32 bits y el resultado será colocado en otro registro, del mismo tamaño.
+            
+            Ejemplos de instrucciones que usan este modo de direccionamiento: add, sub, slt, etc.
+            <br>
+            <br>
+            <img src="imagenes2/13.jpg"
+            width="500"
+            height="200"
+            align="left">
+
+            <br>
+            <br>
+            
+            <img src="imagenes2/8.jpg"
+            width="600"
+            height="100"
+            align="center">
+            
+            <br>
+            <br>
+            
+            Direccionamiento base o desplazamiento, donde uno de los operandos está en una localidad de memoria cuya dirección es la suma de un registro y una constante que forma parte de la misma instrucción.
+            
+            Ejemplos de instrucciones que usan este modo de direccionamiento: lw, sw, etc.
+            
+            <br>
+            <br>
+            
+            <img src="imagenes2/9.jpg"
+            width="600"
+            height="100"
+            align="center">
+            
+            <br>
+            <br>
+            
+            Direccionamiento inmediato, donde uno de los operandos es una constante que está en la misma instrucción.
+            
+            Ejemplos de instrucciones que usan este modo de direccionamiento: addi, slti, etc.
+            
+            <br>
+            <br>
+            
+            <img src="imagenes2/10.jpg"
+            width="600"
+            height="100"
+            align="center">
+            
+            <br>
+            <br>
+            
+            Direccionamiento relativo al PC, donde se forma una dirección sumando una constante, que está en la instrucción, con el registro PC (Program Counter). El resultado de la suma corresponde a la dirección destino si un brinco condicional se va a realizar.
+            
+            Ejemplos de instrucciones que usan este modo de direccionamiento: beq y bne.
+            
+            <br>
+            <br>
+            
+            <img src="imagenes2/11.jpg"
+            width="600"
+            height="100"
+            align="center">
+            
+            <br>
+            <br>
+            
+            Direccionamiento pseudo directo, donde la dirección destino de un salto corresponde a la concatenación de 26 bits que están en la misma instrucción con los bits más significativos del PC.
+            
+            Ejemplos de instrucciones que usan este modo de direccionamiento: j y jal.
+            
+            <br>
+            <br>
+            
+            <img src="imagenes2/12.jpg"
+            width="600"
+            height="100"
+            align="center">
+            
+            <br>
+            <br>
+            
+            Es importante mencionar que estamos estudiando una arquitectura con direcciones de 32 bits, sin embargo, MIPS, como muchas otras arquitecturas, tiene una extensión que maneja direcciones de 64 bits. Esto como una respuesta a la necesidad de manejar programas cada vez más grandes.
+            <br>
+            <br>
+        </p>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <a name="2.4">
+        
+        <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 30px;color: #007fff); text-align: center;">
+            2.4 Casos de estudios de CPU reales
+        </h1>
+        
+    
+        <p style="font-family: cambria; font-size: 20px; text-align: justify;">
+            I-8086: Los registros del procesador, se usan para contener los datos con que se está trabajando puesto que el acceso a los registros es mucho más rápido que los accesos a memoria. Se pueden realizar operaciones aritméticas y lógicas, comparaciones, entre otras. Los modos del 8086 son indirectos por registro, indexados o directos por registro.
+            <br>
+            <br>
+            Motorola 68000: El mismo direccionamiento lleva implícito el tipo de registro sobre el que trabaja (direcciones o datos). Está basado en dos bancos de 8 registros de 32 bits. Un banco es de datos (Dn) y el otro de punteros (An). Además contiene un contador de programa de 32 bits y un registro de estado de 16 bits.
+            <br>
+            <br>
+            80386: Para este microprocesador existe un modo nuevo que requiere un byte adicional denominado SIB (escala, índice, base) que se añade al byte de operandos, es útil para direccionar elementos de vectores de longitudes diferentes en bucles. Es una alternativa a los modos autoindexados que esta máquina no soporta.
+        </p>
+    </a>
+</body>
+</html>

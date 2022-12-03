@@ -1,0 +1,135 @@
+
+body{
+    
+  font-family: Arial;
+  font-size: 1px;
+  font-style: normal;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  background-image: url("imagenes/fondo.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  
+  
+  
+}
+#title{
+    color:  #0f52ba;
+    font-size: 2cm;
+    text-align: center;
+    font-family: Times;
+}
+
+
+#title2{
+  color: black;
+  text-align: justify;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  
+}
+
+#title3{
+    color: black;
+    font-size: 1.5cm;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#title4{
+  color: black;
+  text-align: justify;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  
+}
+
+.div-grande {
+  width: 150px;
+  height: auto;
+  border: solid 1px rgb(19, 77, 185);
+  background-color: white;
+  color: #000080;
+  margin: 10px;
+  text-align: center;
+  float: left;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  text-align: justify;
+  padding-right: 150px;
+  padding-left: 300px;
+  line-height: 30px;
+}
+
+.div-unidades {
+  width: 250px;
+  height: 700px;
+  border: solid 1px rgb(18, 76, 202);
+  background-color: rgb(235, 240, 245);
+  color: rgb(3, 3, 3);
+  margin: 10px;
+  text-align: left;
+  padding-left: 0.5em;
+  float: right;
+}
+
+.div-unidades1 {
+  width: 250px;
+  height: 480px;
+  border: solid 1px rgb(211, 30, 17);
+  background-color: rgb(234, 239, 243);
+  color: rgb(3, 3, 3);
+  margin: 30px;
+  text-align: left;
+  padding-left: 0.5em;
+  float: left;
+}
+
+p.centrado{
+  text-align: center;
+}
+
+.div-inicio {
+  width: auto;
+  font-size: 20px;
+  background-color: rgb(228, 234, 235);
+  color: blueviolet;
+  margin: 5px;
+  text-align: left;
+  padding-left: 0.5em;
+  float: left;
+}
+
+
+.div-unidades3 {
+  width: 200px;
+  height: 610px;
+  border: solid 1px rgb(245, 17, 17);
+  background-color: rgb(234, 240, 245);
+  color: rgb(3, 3, 3);
+  margin: 30px;
+  text-align: left;
+  padding-left: 0.5em;
+  float: left;
+}
+
+.div-unidades4 {
+  width: 200px;
+  height: 530px;
+  border: solid 1px rgb(231, 26, 11);
+  background-color: rgb(240, 247, 244);
+  color: rgb(3, 3, 3);
+  margin: 30px;
+  text-align: left;
+  padding-left: 0.5em;
+  float: left;
+}
+
+
+
+
